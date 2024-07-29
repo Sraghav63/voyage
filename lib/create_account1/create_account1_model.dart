@@ -11,6 +11,10 @@ class CreateAccount1Model extends FlutterFlowModel<CreateAccount1Widget> {
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for name widget.
+  FocusNode? nameFocusNode;
+  TextEditingController? nameTextController;
+  String? Function(BuildContext, String?)? nameTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
@@ -34,6 +38,9 @@ class CreateAccount1Model extends FlutterFlowModel<CreateAccount1Widget> {
     unfocusNode.dispose();
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();
+
+    nameFocusNode?.dispose();
+    nameTextController?.dispose();
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();

@@ -86,7 +86,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 32.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'voyage',
+                              'voyage.',
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
