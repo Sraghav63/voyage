@@ -27,6 +27,9 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
+    _model.nameTextController ??= TextEditingController();
+    _model.nameFocusNode ??= FocusNode();
+
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
@@ -89,7 +92,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 32.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'voyage',
+                              'voyage.',
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
@@ -108,7 +111,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Create an account',
+                                  'Welcome to Voyage.',
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
@@ -215,6 +218,89 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                                 TextInputType.emailAddress,
                                             validator: _model
                                                 .emailAddressTextControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: SizedBox(
+                                          width: 370.0,
+                                          child: TextFormField(
+                                            controller:
+                                                _model.nameTextController,
+                                            focusNode: _model.nameFocusNode,
+                                            autofocus: true,
+                                            autofillHints: const [
+                                              AutofillHints.email
+                                            ],
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'Name',
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            keyboardType:
+                                                TextInputType.emailAddress,
+                                            validator: _model
+                                                .nameTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -465,8 +551,8 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth(
-                                          'HomePage', context.mounted);
+                                      context.pushNamedAuth(
+                                          'onboarding1', context.mounted);
                                     },
                                     text: 'Create Account',
                                     options: FFButtonOptions(
@@ -506,8 +592,8 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth(
-                                          'HomePage', context.mounted);
+                                      context.pushNamedAuth(
+                                          'onboarding1', context.mounted);
                                     },
                                     text: 'Connect with Google',
                                     options: FFButtonOptions(
