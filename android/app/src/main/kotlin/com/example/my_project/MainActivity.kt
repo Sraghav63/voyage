@@ -1,4 +1,4 @@
-package com.mycompany.empowerhackathon
+package voyage.hallo
 
 import io.flutter.embedding.android.FlutterActivity
 

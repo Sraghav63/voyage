@@ -36,7 +36,7 @@ class _Onboarding1WidgetState extends State<Onboarding1Widget> {
     _model.ageFocusNode ??= FocusNode();
 
     _model.addressTextController ??=
-        TextEditingController(text: _model.placePickerValue.address);
+        TextEditingController(text: _model.placePickerValue.name);
     _model.addressFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -438,9 +438,12 @@ class _Onboarding1WidgetState extends State<Onboarding1Widget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 25.0),
                                           child: FlutterFlowPlacePicker(
-                                            iOSGoogleMapsApiKey: '',
-                                            androidGoogleMapsApiKey: '',
-                                            webGoogleMapsApiKey: '',
+                                            iOSGoogleMapsApiKey:
+                                                'AIzaSyCyaSMYoH0DLMeyHSmiW24AWSyJe3q__OI',
+                                            androidGoogleMapsApiKey:
+                                                'AIzaSyD6bq6Bn475XHY4cPIVM5Xn3GJieXX9prg',
+                                            webGoogleMapsApiKey:
+                                                'AIzaSyAAU4S4n14fEaiRaoV7bfR1owdyla7_2JI',
                                             onSelect: (place) async {
                                               setState(() => _model
                                                   .placePickerValue = place);

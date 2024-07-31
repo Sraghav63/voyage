@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class EmpowerHackathonSupabaseUser extends BaseAuthUser {
-  EmpowerHackathonSupabaseUser(this.user);
+class VoyageSupabaseUser extends BaseAuthUser {
+  VoyageSupabaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -57,7 +57,7 @@ class EmpowerHackathonSupabaseUser extends BaseAuthUser {
 /// [SupaFlow.client.auth.onAuthStateChange] does not yield any values until the
 /// user is already authenticated. So we add a default null user to the stream,
 /// if we need to interact with the [currentUser] before logging in.
-Stream<BaseAuthUser> empowerHackathonSupabaseUserStream() {
+Stream<BaseAuthUser> voyageSupabaseUserStream() {
   final supabaseAuthStream = SupaFlow.client.auth.onAuthStateChange.debounce(
       (authState) => authState.event == AuthChangeEvent.tokenRefreshed
           ? TimerStream(authState, const Duration(seconds: 1))
@@ -67,7 +67,7 @@ Stream<BaseAuthUser> empowerHackathonSupabaseUserStream() {
           : supabaseAuthStream)
       .map<BaseAuthUser>(
     (authState) {
-      currentUser = EmpowerHackathonSupabaseUser(authState?.session?.user);
+      currentUser = VoyageSupabaseUser(authState?.session?.user);
       return currentUser!;
     },
   );

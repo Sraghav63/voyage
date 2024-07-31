@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -84,6 +83,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
+          requireAuth: true,
           builder: (context, params) => const HomePageWidget(),
         ),
         FFRoute(
@@ -105,6 +105,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'onboarding2',
           path: '/onboarding2',
           builder: (context, params) => const Onboarding2Widget(),
+        ),
+        FFRoute(
+          name: 'Details38TransactionHistoryResponsive',
+          path: '/details38TransactionHistoryResponsive',
+          builder: (context, params) =>
+              const Details38TransactionHistoryResponsiveWidget(),
+        ),
+        FFRoute(
+          name: 'onboarding2Copy',
+          path: '/onboarding2co',
+          builder: (context, params) => const Onboarding2CopyWidget(),
+        ),
+        FFRoute(
+          name: 'onboarding2CopyCopy',
+          path: '/onboarding2fi',
+          builder: (context, params) => const Onboarding2CopyCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -287,15 +303,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.black,
+                  child: Image.asset(
+                    'assets/images/voyage._(2).png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;
