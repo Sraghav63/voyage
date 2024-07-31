@@ -23,12 +23,6 @@ class UserinfoRow extends SupabaseDataRow {
   String? get displayname => getField<String>('displayname');
   set displayname(String? value) => setField<String>('displayname', value);
 
-  String? get fname => getField<String>('fname');
-  set fname(String? value) => setField<String>('fname', value);
-
-  String? get lname => getField<String>('lname');
-  set lname(String? value) => setField<String>('lname', value);
-
   int? get age => getField<int>('age');
   set age(int? value) => setField<int>('age', value);
 
@@ -40,4 +34,13 @@ class UserinfoRow extends SupabaseDataRow {
 
   String? get email => getField<String>('email');
   set email(String? value) => setField<String>('email', value);
+
+  String? get question1 => getField<String>('question1');
+  set question1(String? value) => setField<String>('question1', value);
+
+  String? get question2 => getField<String>('question2');
+  set question2(String? value) => setField<String>('question2', value);
+
+  String? get question3 => getField<String>('question3');
+  set question3(String? value) => setField<String>('question3', value);
 }
