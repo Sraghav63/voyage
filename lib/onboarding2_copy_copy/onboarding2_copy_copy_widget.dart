@@ -10,7 +10,12 @@ import 'onboarding2_copy_copy_model.dart';
 export 'onboarding2_copy_copy_model.dart';
 
 class Onboarding2CopyCopyWidget extends StatefulWidget {
-  const Onboarding2CopyCopyWidget({super.key});
+  const Onboarding2CopyCopyWidget({
+    super.key,
+    required this.geminipass2,
+  });
+
+  final String? geminipass2;
 
   @override
   State<Onboarding2CopyCopyWidget> createState() =>
@@ -34,30 +39,6 @@ class _Onboarding2CopyCopyWidgetState extends State<Onboarding2CopyCopyWidget>
     _model.testAnswerFocusNode ??= FocusNode();
 
     animationsMap.addAll({
-      'textOnPageLoadAnimation1': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 590.0.ms,
-            duration: 1210.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation2': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 590.0.ms,
-            duration: 1230.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-        ],
-      ),
       'textOnActionTriggerAnimation': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: true,
@@ -71,13 +52,13 @@ class _Onboarding2CopyCopyWidgetState extends State<Onboarding2CopyCopyWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation3': AnimationInfo(
+      'textOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         applyInitialState: true,
         effectsBuilder: () => [
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 2000.0.ms,
+            delay: 300.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -103,7 +84,7 @@ class _Onboarding2CopyCopyWidgetState extends State<Onboarding2CopyCopyWidget>
         effectsBuilder: () => [
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 2000.0.ms,
+            delay: 310.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -129,7 +110,7 @@ class _Onboarding2CopyCopyWidgetState extends State<Onboarding2CopyCopyWidget>
         effectsBuilder: () => [
           FadeEffect(
             curve: Curves.easeInOut,
-            delay: 2000.0.ms,
+            delay: 290.0.ms,
             duration: 600.0.ms,
             begin: 0.0,
             end: 1.0,
@@ -156,306 +137,322 @@ class _Onboarding2CopyCopyWidgetState extends State<Onboarding2CopyCopyWidget>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: SafeArea(
-          top: true,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Expanded(
-                flex: 8,
-                child: Container(
-                  width: 100.0,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  alignment: const AlignmentDirectional(0.0, -1.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      SingleChildScrollView(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: double.infinity,
-                              height: 63.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(16.0),
-                                  bottomRight: Radius.circular(16.0),
-                                  topLeft: Radius.circular(0.0),
-                                  topRight: Radius.circular(0.0),
+    return Title(
+        title: 'onboarding2CopyCopy',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: GestureDetector(
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            body: SafeArea(
+              top: true,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    flex: 8,
+                    child: Container(
+                      width: 100.0,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: double.infinity,
+                                  height: 63.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(16.0),
+                                      bottomRight: Radius.circular(16.0),
+                                      topLeft: Radius.circular(0.0),
+                                      topRight: Radius.circular(0.0),
+                                    ),
+                                  ),
+                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        32.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'voyage.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                                Align(
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(32.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 120.0, 0.0, 10.0),
+                                            child: Text(
+                                              'Welcome to your voyage.',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .displaySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 60.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            'Let\'s get to know each other better, feel free to skip or answer in your own terms :)',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      200.0, 50.0, 200.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.geminipass2,
+                                      'Who\'s in your support crew, both back home and in your new country? What extra help do you think would make your journey smoother?',
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  )
+                                      .animateOnPageLoad(animationsMap[
+                                          'textOnPageLoadAnimation']!)
+                                      .animateOnActionTrigger(
+                                        animationsMap[
+                                            'textOnActionTriggerAnimation']!,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Form(
+                              key: _model.formKey,
+                              autovalidateMode: AutovalidateMode.disabled,
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    32.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'voyage.',
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
+                                    0.0, 30.0, 0.0, 16.0),
+                                child: SizedBox(
+                                  width: MediaQuery.sizeOf(context).width * 0.6,
+                                  child: TextFormField(
+                                    controller: _model.testAnswerTextController,
+                                    focusNode: _model.testAnswerFocusNode,
+                                    autofocus: true,
+                                    autofillHints: const [AutofillHints.password],
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText: 'Your answer here',
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      alignLabelWithHint: true,
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsets.all(32.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                      child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 170.0, 0.0, 10.0),
-                                        child: Text(
-                                          'Welcome to your voyage.',
-                                          style: FlutterFlowTheme.of(context)
-                                              .displaySmall
-                                              .override(
-                                                fontFamily: 'Readex Pro',
-                                                fontSize: 60.0,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation1']!),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
                                     ),
-                                    Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
-                                      child: Text(
-                                        'Let\'s get to know each other better, feel free to skip or answer in your own terms :)',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ).animateOnPageLoad(animationsMap[
-                                          'textOnPageLoadAnimation2']!),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  200.0, 50.0, 200.0, 0.0),
-                              child: Text(
-                                'Who\'s in your support crew, both back home and in your new country? What extra help do you think would make your journey smoother?',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      fontSize: 18.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              )
-                                  .animateOnPageLoad(animationsMap[
-                                      'textOnPageLoadAnimation3']!)
-                                  .animateOnActionTrigger(
-                                    animationsMap[
-                                        'textOnActionTriggerAnimation']!,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    textAlign: TextAlign.start,
+                                    maxLines: null,
+                                    minLines: 3,
+                                    validator: _model
+                                        .testAnswerTextControllerValidator
+                                        .asValidator(context),
                                   ),
+                                )
+                                    .animateOnPageLoad(animationsMap[
+                                        'textFieldOnPageLoadAnimation']!)
+                                    .animateOnActionTrigger(
+                                      animationsMap[
+                                          'textFieldOnActionTriggerAnimation']!,
+                                    ),
+                              ),
                             ),
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Form(
-                          key: _model.formKey,
-                          autovalidateMode: AutovalidateMode.disabled,
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 30.0, 0.0, 16.0),
-                            child: SizedBox(
-                              width: MediaQuery.sizeOf(context).width * 0.6,
-                              child: TextFormField(
-                                controller: _model.testAnswerTextController,
-                                focusNode: _model.testAnswerFocusNode,
-                                autofocus: true,
-                                autofillHints: const [AutofillHints.password],
-                                obscureText: false,
-                                decoration: InputDecoration(
-                                  labelText: 'Your answer here',
-                                  labelStyle: FlutterFlowTheme.of(context)
-                                      .labelMedium
+                          ),
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 16.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  if (animationsMap[
+                                          'textOnActionTriggerAnimation'] !=
+                                      null) {
+                                    await animationsMap[
+                                            'textOnActionTriggerAnimation']!
+                                        .controller
+                                        .forward(from: 0.0);
+                                  }
+                                  if (animationsMap[
+                                          'textFieldOnActionTriggerAnimation'] !=
+                                      null) {
+                                    await animationsMap[
+                                            'textFieldOnActionTriggerAnimation']!
+                                        .controller
+                                        .forward(from: 0.0);
+                                  }
+                                  if (animationsMap[
+                                          'buttonOnActionTriggerAnimation'] !=
+                                      null) {
+                                    await animationsMap[
+                                            'buttonOnActionTriggerAnimation']!
+                                        .controller
+                                        .forward(from: 0.0);
+                                  }
+
+                                  context.goNamed(
+                                    'HomePage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+
+                                  await UserinfoTable().update(
+                                    data: {
+                                      'question3':
+                                          'question: ${widget.geminipass2}| answer: ${_model.testAnswerTextController.text}',
+                                    },
+                                    matchingRows: (rows) => rows.eq(
+                                      'id',
+                                      currentUserUid,
+                                    ),
+                                  );
+                                },
+                                text: 'Continue',
+                                options: FFButtonOptions(
+                                  width: 336.0,
+                                  height: 44.0,
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: const Color(0x40323232),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
                                       .override(
                                         fontFamily: 'Inter',
+                                        color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),
-                                  alignLabelWithHint: true,
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
+                                  elevation: 3.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).error,
-                                      width: 2.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  filled: true,
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                textAlign: TextAlign.center,
-                                maxLines: null,
-                                minLines: 3,
-                                validator: _model
-                                    .testAnswerTextControllerValidator
-                                    .asValidator(context),
-                              ),
-                            )
-                                .animateOnPageLoad(animationsMap[
-                                    'textFieldOnPageLoadAnimation']!)
-                                .animateOnActionTrigger(
-                                  animationsMap[
-                                      'textFieldOnActionTriggerAnimation']!,
-                                ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 16.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              if (animationsMap[
-                                      'textOnActionTriggerAnimation'] !=
-                                  null) {
-                                await animationsMap[
-                                        'textOnActionTriggerAnimation']!
-                                    .controller
-                                    .forward(from: 0.0);
-                              }
-                              if (animationsMap[
-                                      'textFieldOnActionTriggerAnimation'] !=
-                                  null) {
-                                await animationsMap[
-                                        'textFieldOnActionTriggerAnimation']!
-                                    .controller
-                                    .forward(from: 0.0);
-                              }
-                              if (animationsMap[
-                                      'buttonOnActionTriggerAnimation'] !=
-                                  null) {
-                                await animationsMap[
-                                        'buttonOnActionTriggerAnimation']!
-                                    .controller
-                                    .forward(from: 0.0);
-                              }
-
-                              context.goNamed(
-                                'HomePage',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
+                              )
+                                  .animateOnPageLoad(animationsMap[
+                                      'buttonOnPageLoadAnimation']!)
+                                  .animateOnActionTrigger(
+                                    animationsMap[
+                                        'buttonOnActionTriggerAnimation']!,
                                   ),
-                                },
-                              );
-
-                              await UserinfoTable().update(
-                                data: {
-                                  'question3':
-                                      _model.testAnswerTextController.text,
-                                },
-                                matchingRows: (rows) => rows.eq(
-                                  'id',
-                                  currentUserUid,
-                                ),
-                              );
-                            },
-                            text: 'Continue',
-                            options: FFButtonOptions(
-                              width: 336.0,
-                              height: 44.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: const Color(0x40323232),
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
                             ),
-                          )
-                              .animateOnPageLoad(
-                                  animationsMap['buttonOnPageLoadAnimation']!)
-                              .animateOnActionTrigger(
-                                animationsMap[
-                                    'buttonOnActionTriggerAnimation']!,
-                              ),
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -11,6 +11,8 @@ class Onboarding2CopyModel extends FlutterFlowModel<Onboarding2CopyWidget> {
   FocusNode? testAnswerFocusNode;
   TextEditingController? testAnswerTextController;
   String? Function(BuildContext, String?)? testAnswerTextControllerValidator;
+  // Stores action output result for [Gemini - Generate Text] action in Button widget.
+  String? geminioutput2;
 
   @override
   void initState(BuildContext context) {}

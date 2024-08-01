@@ -1,20 +1,19 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'onboarding2_widget.dart' show Onboarding2Widget;
+import 'roadmapgendash_widget.dart' show RoadmapgendashWidget;
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
 
-class Onboarding2Model extends FlutterFlowModel<Onboarding2Widget> {
+class RoadmapgendashModel extends FlutterFlowModel<RoadmapgendashWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  AudioPlayer? soundPlayer;
+  // Stores action output result for [Backend Call - Query Rows] action in roadmapgendash widget.
+  List<UserinfoRow>? theoutput;
   // State field(s) for testAnswer widget.
   FocusNode? testAnswerFocusNode;
   TextEditingController? testAnswerTextController;
   String? Function(BuildContext, String?)? testAnswerTextControllerValidator;
-  // Stores action output result for [Gemini - Generate Text] action in Button widget.
-  String? geminiOutput;
 
   @override
   void initState(BuildContext context) {}
@@ -25,7 +24,4 @@ class Onboarding2Model extends FlutterFlowModel<Onboarding2Widget> {
     testAnswerFocusNode?.dispose();
     testAnswerTextController?.dispose();
   }
-
-  /// Action blocks.
-  Future test(BuildContext context) async {}
 }

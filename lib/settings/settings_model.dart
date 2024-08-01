@@ -1,15 +1,13 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'details38_transaction_history_responsive_widget.dart'
-    show Details38TransactionHistoryResponsiveWidget;
+import 'settings_widget.dart' show SettingsWidget;
 import 'package:flutter/material.dart';
 
-class Details38TransactionHistoryResponsiveModel
-    extends FlutterFlowModel<Details38TransactionHistoryResponsiveWidget> {
+class SettingsModel extends FlutterFlowModel<SettingsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Stores action output result for [Backend Call - Query Rows] action in Details38TransactionHistoryResponsive widget.
+  // Stores action output result for [Backend Call - Query Rows] action in settings widget.
   List<UserinfoRow>? theoutput;
 
   @override

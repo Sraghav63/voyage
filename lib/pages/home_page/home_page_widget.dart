@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -31,11 +32,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           currentUserUid,
         ),
       );
+      await Future.delayed(const Duration(milliseconds: 2000));
       if (_model.theguy?.first.age.toString() == null ||
           _model.theguy?.first.age.toString() == '') {
         context.pushNamed('onboarding1');
       } else {
-        context.pushNamed('Details38TransactionHistoryResponsive');
+        context.pushNamed('roadmapgendash');
       }
     });
 
@@ -51,27 +53,33 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Colors.black,
-        body: SafeArea(
-          top: true,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Image.asset(
-              'assets/images/voyage._(2).png',
-              width: 1440.0,
-              height: 902.0,
-              fit: BoxFit.contain,
-              alignment: const Alignment(0.0, 0.0),
+    return Title(
+        title: 'HomePage',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: GestureDetector(
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: Colors.black,
+            body: SafeArea(
+              top: true,
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/voyage._(2).png',
+                    width: 1579.0,
+                    height: 902.0,
+                    fit: BoxFit.fitHeight,
+                    alignment: const Alignment(0.0, 0.0),
+                  ),
+                ),
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

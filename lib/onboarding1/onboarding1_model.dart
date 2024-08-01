@@ -16,10 +16,6 @@ class Onboarding1Model extends FlutterFlowModel<Onboarding1Widget> {
   FocusNode? ageFocusNode;
   TextEditingController? ageTextController;
   String? Function(BuildContext, String?)? ageTextControllerValidator;
-  // State field(s) for address widget.
-  FocusNode? addressFocusNode;
-  TextEditingController? addressTextController;
-  String? Function(BuildContext, String?)? addressTextControllerValidator;
   // State field(s) for PlacePicker widget.
   FFPlace placePickerValue = const FFPlace();
   // State field(s) for gender widget.
@@ -37,8 +33,5 @@ class Onboarding1Model extends FlutterFlowModel<Onboarding1Widget> {
 
     ageFocusNode?.dispose();
     ageTextController?.dispose();
-
-    addressFocusNode?.dispose();
-    addressTextController?.dispose();
   }
 }
