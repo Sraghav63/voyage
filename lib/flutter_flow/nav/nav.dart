@@ -107,20 +107,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Onboarding2Widget(),
         ),
         FFRoute(
-          name: 'Details38TransactionHistoryResponsive',
-          path: '/details38TransactionHistoryResponsive',
-          builder: (context, params) =>
-              const Details38TransactionHistoryResponsiveWidget(),
+          name: 'roadmapgendash',
+          path: '/roadmapgendash',
+          builder: (context, params) => const RoadmapgendashWidget(),
         ),
         FFRoute(
           name: 'onboarding2Copy',
           path: '/onboarding2co',
-          builder: (context, params) => const Onboarding2CopyWidget(),
+          builder: (context, params) => Onboarding2CopyWidget(
+            geminipass: params.getParam(
+              'geminipass',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'onboarding2CopyCopy',
           path: '/onboarding2fi',
-          builder: (context, params) => const Onboarding2CopyCopyWidget(),
+          builder: (context, params) => Onboarding2CopyCopyWidget(
+            geminipass2: params.getParam(
+              'geminipass2',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'settings',
+          path: '/settings',
+          builder: (context, params) => const SettingsWidget(),
+        ),
+        FFRoute(
+          name: 'app',
+          path: '/app',
+          requireAuth: true,
+          builder: (context, params) => const AppWidget(),
+        ),
+        FFRoute(
+          name: 'HomePageCopy',
+          path: '/homePageCopy',
+          requireAuth: true,
+          builder: (context, params) => const HomePageCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

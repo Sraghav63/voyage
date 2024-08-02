@@ -28,6 +28,17 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
+                <!--FF_REVERSED_CLIENT_ID-->
+                
+            </array>
+        </dict>
+
+
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
                 <string>com.googleusercontent.apps.968648566400-nq84r2jr1n8s2l0l67bgclfo0ecn3vg0</string>
             </array>
         </dict>

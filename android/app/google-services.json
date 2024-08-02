@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "462236492822",
+    "project_id": "empower-hackathon-o8w1jr",
+    "storage_bucket": "empower-hackathon-o8w1jr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462236492822:android:7fd7ec24c85dd3c4048137",
+        "android_client_info": {
+          "package_name": "voyage.hallo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5QTRbJ0TQZdeVR9Ib8M7le6RVQIUlWTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
