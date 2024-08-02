@@ -139,7 +139,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'app',
           path: '/app',
+          requireAuth: true,
           builder: (context, params) => const AppWidget(),
+        ),
+        FFRoute(
+          name: 'HomePageCopy',
+          path: '/homePageCopy',
+          requireAuth: true,
+          builder: (context, params) => const HomePageCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
