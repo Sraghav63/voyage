@@ -166,11 +166,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    const Icon(
-                                      Icons.circle_sharp,
-                                      color: Colors.white,
-                                      size: 16.0,
-                                    ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 0.0, 0.0, 5.0),
@@ -312,7 +307,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Finance',
+                                                  'Finance Help (Not Available)',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -361,7 +356,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Community',
+                                                  'Community (Not Available)',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

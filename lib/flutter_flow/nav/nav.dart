@@ -109,7 +109,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'roadmapgendash',
           path: '/roadmapgendash',
-          builder: (context, params) => const RoadmapgendashWidget(),
+          builder: (context, params) => RoadmapgendashWidget(
+            starting: params.getParam(
+              'starting',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'onboarding2Copy',
@@ -147,6 +152,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/homePageCopy',
           requireAuth: true,
           builder: (context, params) => const HomePageCopyWidget(),
+        ),
+        FFRoute(
+          name: 'onboarding2CopyCopyCopy',
+          path: '/onboarding2fif',
+          builder: (context, params) => const Onboarding2CopyCopyCopyWidget(),
+        ),
+        FFRoute(
+          name: 'landing',
+          path: '/landing',
+          builder: (context, params) => const LandingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

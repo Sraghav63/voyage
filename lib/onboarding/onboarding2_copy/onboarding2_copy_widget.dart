@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'onboarding2_copy_model.dart';
 export 'onboarding2_copy_model.dart';
 
@@ -357,99 +358,131 @@ class _Onboarding2CopyWidgetState extends State<Onboarding2CopyWidget>
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                if (animationsMap[
-                                        'textOnActionTriggerAnimation'] !=
-                                    null) {
-                                  await animationsMap[
-                                          'textOnActionTriggerAnimation']!
-                                      .controller
-                                      .forward(from: 0.0);
-                                }
-                                if (animationsMap[
-                                        'textFieldOnActionTriggerAnimation'] !=
-                                    null) {
-                                  await animationsMap[
-                                          'textFieldOnActionTriggerAnimation']!
-                                      .controller
-                                      .forward(from: 0.0);
-                                }
-                                if (animationsMap[
-                                        'buttonOnActionTriggerAnimation'] !=
-                                    null) {
-                                  await animationsMap[
-                                          'buttonOnActionTriggerAnimation']!
-                                      .controller
-                                      .forward(from: 0.0);
-                                }
-                                await UserinfoTable().update(
-                                  data: {
-                                    'question2':
-                                        'question: ${widget.geminipass} | answer: ${_model.testAnswerTextController.text}',
-                                  },
-                                  matchingRows: (rows) => rows.eq(
-                                    'id',
-                                    currentUserUid,
-                                  ),
-                                );
-                                await geminiGenerateText(
-                                  context,
-                                  'you are an AI model that is responsible for creating a roadmap for a first-gen student. The first question you have asked is: \"${widget.geminipass}\", now based on what the user responds, I need you to tell me another question so that my AI model can create a better roadmap with good context. If the user responds with a blank or with an answer that doesnt follow context, then ask another question regardless of what the user has responded with. Only respond with another question if the user answer is with context to the question i have provided you. The answer from the user was: \"${_model.testAnswerTextController.text}\". Respond in 1-2 sentences taking into account what the user has said to your question. This is also your last question to ask, so dont ask a follow up after this.',
-                                ).then((generatedText) {
-                                  safeSetState(() =>
-                                      _model.geminioutput2 = generatedText);
-                                });
-
-                                context.goNamed(
-                                  'onboarding2CopyCopy',
-                                  queryParameters: {
-                                    'geminipass2': serializeParam(
-                                      _model.geminioutput2,
-                                      ParamType.String,
-                                    ),
-                                  }.withoutNulls,
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                    ),
-                                  },
-                                );
-
-                                setState(() {});
-                              },
-                              text: 'Continue',
-                              options: FFButtonOptions(
-                                width: 336.0,
-                                height: 44.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x40323232),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: const BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                            child: FutureBuilder<List<UserinfoRow>>(
+                              future: UserinfoTable().querySingleRow(
+                                queryFn: (q) => q.eq(
+                                  'id',
+                                  currentUserUid,
                                 ),
-                                borderRadius: BorderRadius.circular(12.0),
                               ),
-                            )
-                                .animateOnPageLoad(
-                                    animationsMap['buttonOnPageLoadAnimation']!)
-                                .animateOnActionTrigger(
-                                  animationsMap[
-                                      'buttonOnActionTriggerAnimation']!,
-                                ),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return const Center(
+                                    child: SizedBox(
+                                      width: 30.0,
+                                      height: 30.0,
+                                      child: SpinKitChasingDots(
+                                        color: Color(0xFF4D10FB),
+                                        size: 30.0,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<UserinfoRow> buttonUserinfoRowList =
+                                    snapshot.data!;
+
+                                final buttonUserinfoRow =
+                                    buttonUserinfoRowList.isNotEmpty
+                                        ? buttonUserinfoRowList.first
+                                        : null;
+
+                                return FFButtonWidget(
+                                  onPressed: () async {
+                                    if (animationsMap[
+                                            'textOnActionTriggerAnimation'] !=
+                                        null) {
+                                      await animationsMap[
+                                              'textOnActionTriggerAnimation']!
+                                          .controller
+                                          .forward(from: 0.0);
+                                    }
+                                    if (animationsMap[
+                                            'textFieldOnActionTriggerAnimation'] !=
+                                        null) {
+                                      await animationsMap[
+                                              'textFieldOnActionTriggerAnimation']!
+                                          .controller
+                                          .forward(from: 0.0);
+                                    }
+                                    if (animationsMap[
+                                            'buttonOnActionTriggerAnimation'] !=
+                                        null) {
+                                      await animationsMap[
+                                              'buttonOnActionTriggerAnimation']!
+                                          .controller
+                                          .forward(from: 0.0);
+                                    }
+                                    await UserinfoTable().update(
+                                      data: {
+                                        'question2':
+                                            'question: ${widget.geminipass} | answer: ${_model.testAnswerTextController.text}',
+                                      },
+                                      matchingRows: (rows) => rows.eq(
+                                        'id',
+                                        currentUserUid,
+                                      ),
+                                    );
+                                    await geminiGenerateText(
+                                      context,
+                                      'you are an AI model that is responsible for creating a roadmap for a first-gen student. The first question you have asked is: \"${widget.geminipass}\", now based on what the user responds, I need you to tell me another question so that my AI model can create a better roadmap with good context. If the user responds with a blank or with an answer that doesnt follow context, then ask another question regardless of what the user has responded with. Only respond with another question if the user answer is with context to the question i have provided you. The answer from the user was: \"${_model.testAnswerTextController.text}\". Respond in 1-2 sentences taking into account what the user has said to your question. This is also your last question to ask, so dont ask a follow up after this.The user has also previously responded with the following:${buttonUserinfoRow?.question1}',
+                                    ).then((generatedText) {
+                                      safeSetState(() =>
+                                          _model.geminioutput2 = generatedText);
+                                    });
+
+                                    context.goNamed(
+                                      'onboarding2CopyCopy',
+                                      queryParameters: {
+                                        'geminipass2': serializeParam(
+                                          _model.geminioutput2,
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+
+                                    setState(() {});
+                                  },
+                                  text: 'Continue',
+                                  options: FFButtonOptions(
+                                    width: 336.0,
+                                    height: 44.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0x40323232),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                )
+                                    .animateOnPageLoad(animationsMap[
+                                        'buttonOnPageLoadAnimation']!)
+                                    .animateOnActionTrigger(
+                                      animationsMap[
+                                          'buttonOnActionTriggerAnimation']!,
+                                    );
+                              },
+                            ),
                           ),
                         ),
                       ],

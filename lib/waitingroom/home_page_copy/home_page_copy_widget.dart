@@ -41,56 +41,56 @@ class _HomePageCopyWidgetState extends State<HomePageCopyWidget>
       );
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile1}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile1}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput1 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile2}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile2}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput2 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile3}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile3}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput3 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile4}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile4}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput4 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile5}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile5}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput5 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile6}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile6}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput6 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile7}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile7}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput7 = generatedText);
       });
 
       await geminiGenerateText(
         context,
-        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile8}',
+        'Create a pretty short & concise formal title for this text: ${_model.thisisit?.first.mile8}This is an example for another user follow this formatting. Don\'t use bold, italics or underline. Only use line breaks: Foundation Building in Aerospace Engineering',
       ).then((generatedText) {
         safeSetState(() => _model.gemoutput8 = generatedText);
       });
