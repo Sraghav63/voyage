@@ -10,4 +10,4 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://cdn.discordapp.com/attachments/763297480942944276/1269118945831555082/XulTOYu.png?ex=66aee69f&amp;is=66ad951f&amp;hm=57871e2df3a4c6f91f3511ea46ecb386bb830870b49de2ed88327e9b264c80cf&amp;" alt="project-screenshot" width="1080" height="1920/">
+<img src="https://cdn.discordapp.com/attachments/763297480942944276/1269119873657606278/c5xEfXn.png?ex=66aee77c&amp;is=66ad95fc&amp;hm=0b3be6d828ff32481f88c8006932e53f4453eab29c68628ecc3163949992730d&amp;" alt="project-screenshot" width="2442" height="1380/">
