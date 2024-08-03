@@ -15,3 +15,6 @@ export '/screens/settings/settings_widget.dart' show SettingsWidget;
 export '/screens/app/app_widget.dart' show AppWidget;
 export '/waitingroom/home_page_copy/home_page_copy_widget.dart'
     show HomePageCopyWidget;
+export '/onboarding/onboarding2_copy_copy_copy/onboarding2_copy_copy_copy_widget.dart'
+    show Onboarding2CopyCopyCopyWidget;
+export '/landing/landing_widget.dart' show LandingWidget;

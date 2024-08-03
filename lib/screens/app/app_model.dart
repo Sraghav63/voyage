@@ -7,6 +7,7 @@ class AppModel extends FlutterFlowModel<AppWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // Stores action output result for [Backend Call - Query Rows] action in app widget.
   List<UserinfoRow>? theoutput;
   // State field(s) for name widget.

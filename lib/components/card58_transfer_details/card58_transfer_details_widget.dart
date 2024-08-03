@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'card58_transfer_details_model.dart';
 export 'card58_transfer_details_model.dart';
 
@@ -141,7 +142,7 @@ class _Card58TransferDetailsWidgetState
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: Image.network(
-                    'https://images.unsplash.com/photo-1699567100905-184c7b51d6c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxtb3V0bmFpbnN8ZW58MHx8fHwxNzIyNTYyNTg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
+                    'https://images.unsplash.com/photo-1502318217862-aa4e294ba657?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxzcGFjZXxlbnwwfHx8fDE3MjI2NDI4ODV8MA&ixlib=rb-4.0.3&q=80&w=1080',
                   ).image,
                 ),
                 borderRadius: BorderRadius.circular(10.0),
@@ -158,10 +159,11 @@ class _Card58TransferDetailsWidgetState
                       ),
                       style: FlutterFlowTheme.of(context).labelSmall.override(
                             fontFamily: 'Inter',
+                            color: Colors.white,
                             letterSpacing: 0.0,
                           ),
                     ),
-                    Text(
+                    GradientText(
                       '${widget.name}\'s ${widget.milestoneNum}',
                       textAlign: TextAlign.end,
                       style:
@@ -172,6 +174,9 @@ class _Card58TransferDetailsWidgetState
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w600,
                               ),
+                      colors: const [Color(0xFF9A97F0), Color(0xFFE78AFF)],
+                      gradientDirection: GradientDirection.ltr,
+                      gradientType: GradientType.linear,
                     ),
                   ],
                 ),
@@ -186,22 +191,37 @@ class _Card58TransferDetailsWidgetState
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                      child: Text(
-                        valueOrDefault<String>(
-                          widget.content,
-                          'the',
-                        ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                    child: RichText(
+                      textScaler: MediaQuery.of(context).textScaler,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: valueOrDefault<String>(
+                              widget.content,
+                              'context',
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                  fontSize: 25.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          )
+                        ],
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
-                              fontSize: 20.0,
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.w300,
                             ),
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],

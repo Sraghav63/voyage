@@ -485,8 +485,8 @@ class _Onboarding1WidgetState extends State<Onboarding1Widget> {
                                           ),
                                         );
 
-                                        context.pushNamed(
-                                          'onboarding2',
+                                        context.goNamed(
+                                          'onboarding2CopyCopyCopy',
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
